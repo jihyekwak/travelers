@@ -1,5 +1,5 @@
 {
-  "name": "travelers",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,12 +13,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-		"start": "yarn --cwd server start",
-		"build": "yarn --cwd client build && mv ./client/build ./server/build",
-		"start-server-dev": "yarn --cwd server dev",
-		"start-client-dev": "yarn --cwd client start",
-		"dev": "concurrently --kill-others --handle-input -n client,server 'npm:start-client-dev' 'npm:start-server-dev'"
-	},
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -36,14 +35,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "travel social network",
-  "main": "index.js",
-  "author": "jihyekwak",
-  "license": "MIT",
-  "workspaces": [
-    "client",
-    "server",
-    "packages/*"
-  ]
+  }
 }
