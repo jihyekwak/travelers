@@ -1,0 +1,8 @@
+.postForm {
+    margin: auto auto;
+}
+
+textarea {
+    width: 500px;
+    height: 300px;
+}

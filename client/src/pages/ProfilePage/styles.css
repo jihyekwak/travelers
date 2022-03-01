@@ -1,0 +1,16 @@
+.profilePage {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.profileSection {
+    width: 30%;
+    border: 1px solid black;
+}
+
+.postSection{
+    width: 50%;
+    border: 1px solid black;
+}

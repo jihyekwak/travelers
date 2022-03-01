@@ -1,20 +1,30 @@
 require("dotenv").config({ path: "../.env" });
 /* ==== External Modules ==== */
 const express = require("express");
+
+const cors = require("cors")
 const path = require("path");
 
 /* ==== Internal Modules ==== */
 
 /* ==== Instance Modules ==== */
 const app = express();
+const routes = require("./routes")
 
 /* ==== Configuration ==== */
 const config = require("@travelers/config");
 
 /* ==== Middleware ==== */
+app.use(cors())
 app.use(express.static(path.join("build")));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
+app.use("/uploads", express.static("uploads"));
+
 
 /* ==== Routes & Controllers ==== */
+app.use("/api", routes)
 app.all("/api/*", (req, res, next) => {
     res.send("HOLD UP THESE ARE NOT THE APIS YOU ARE LOOKING FOR")
 })
